@@ -76,6 +76,7 @@ export default function Home() {
   const [isModal, setIsModal] = useState(false)
   const [progress, setProgress] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
+  const [preview, setPreview] = useState()
 
   const handleImgChange = (e) => {
     if (e.target.files[0]) {
@@ -158,6 +159,20 @@ export default function Home() {
     setContactList(removeItem)
   }
 
+  // create a preview as a side effect, whenever selected file is changed
+  useEffect(() => {
+    if (!image) {
+      setPreview(undefined)
+      return
+    }
+
+    const objectUrl = URL.createObjectURL(image)
+    setPreview(objectUrl)
+
+    // free memory when ever this component is unmounted
+    return () => URL.revokeObjectURL(objectUrl)
+  }, [image])
+
   const styles = useStyles()
 
   return (
@@ -223,7 +238,7 @@ export default function Home() {
               <h1>ADD CONTACT</h1>
               <div className={classes.AvatarContainer}>
                 <Avatar
-                  src={imgUrl ? imgUrl : null}
+                  src={imgUrl ? imgUrl : preview ? preview : null}
                   sx={{ width: 100, height: 100 }}
                 />
                 {progress ? (
@@ -262,7 +277,11 @@ export default function Home() {
                           </label>
                         </div>
                       </div>
-                      <div onClick={handleUpload} className={classes.uploadImg}>
+                      <div
+                        style={{ cursor: 'pointer' }}
+                        onClick={handleUpload}
+                        className={classes.uploadImg}
+                      >
                         <ImUpload size={25} />
                         <p>Upload Image</p>
                       </div>
