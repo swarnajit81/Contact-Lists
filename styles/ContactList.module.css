@@ -1,0 +1,87 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid var(--primary-button);
+  transition: all 0.3 linear;
+}
+
+.container:hover {
+  transition: all 0.3 linear;
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.1);
+}
+.avatarContainer {
+  display: flex;
+  align-items: center;
+}
+.avatar {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: var(--secondary-button);
+  border: 1px solid var(--body-color);
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 1rem;
+}
+
+.whatsappIcon {
+  margin-right: 0.5rem;
+}
+.checkmark {
+  color: var(--secondary-button);
+}
+.actions {
+  display: flex;
+  align-items: center;
+}
+.whatsapp {
+  display: flex;
+  align-items: center;
+}
+.edit {
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.delete {
+  cursor: pointer;
+}
+.avatar img {
+  width: 100%;
+
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.type {
+  width: max-content;
+  background: #ffdb98;
+  padding: 0.3rem 0;
+  border-radius: var(--border-radius);
+  color: var(--bg-color);
+}
+.type p {
+  padding: 0;
+  margin: 0;
+}
+.avatarContainer {
+  width: 40%;
+}
+.whatsapp {
+  width: 15%;
+}
+.number {
+  text-align: center;
+  width: 30%;
+}
+.type {
+  display: grid;
+  place-items: center;
+  width: 10%;
+  text-align: center;
+}

@@ -1,116 +1,158 @@
 .container {
-  padding: 0 2rem;
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+.addContactContainer {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  margin-left: auto;
+}
+.search {
+  display: flex;
+  background: var(--secondary-button);
+  align-items: center;
+  position: relative;
+  width: 200px;
+  height: 40px;
+  max-width: 190%;
+  border-radius: var(--border-radius);
+}
+.search input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+  padding-left: 3rem;
+  color: var(--body-color);
+  font-size: 16px;
+}
+.searchIcon {
+  position: absolute;
+
+  left: 10px;
+  top: 60%;
+  transform: translateY(-50%);
+  font-size: 30px;
+}
+.addContactButton {
+  display: grid;
+  place-items: center;
+  height: 40px;
+  background: var(--primary-button);
+  margin-right: 1rem;
+  padding: 0 2rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.contactList {
+  margin-top: 1.5rem;
+}
+
+/* Address Modal */
+
+.addAddressModal {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+}
+.addAdressContainer {
+  position: relative;
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(15px);
+  width: 600px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
-
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+.avatarContainer {
+  position: relative;
 }
-
-.footer a {
+.chooseImg {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-button);
+  height: 40px;
+  width: 200px;
+  padding: 1rem;
 }
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
+.buttonWrap {
   display: flex;
   align-items: center;
+  margin-top: 1rem;
+}
+.uploadImg {
+  display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+  align-items: center;
+  border-radius: var(--border-radius);
+  background-color: var(--secondary-button);
+  height: 40px;
+  margin-left: 1rem;
+  padding: 0 1rem;
+  width: 200px;
 }
-
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+.uploadImg label {
+  display: flex;
+  align-items: center;
 }
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
+.uploadImg p,
+.chooseImg p {
   margin-left: 0.5rem;
 }
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+.inputGroup {
+  margin-top: 1rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+.submit {
+  width: max-content;
+  padding: 0 2rem;
+  cursor: pointer;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+  background: var(--secondary-button);
+  border-radius: var(--border-radius);
+}
+.cancel {
+  width: max-content;
+  padding: 0 2rem;
+  cursor: pointer;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+  background: var(--primary-button);
+  border-radius: var(--border-radius);
+}
+.progressBar {
+  position: relative;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+.progressBar p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
